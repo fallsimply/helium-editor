@@ -1,0 +1,33 @@
+@import "./dropdown/index.styl"
+@import "./editor.styl"
+
+@media (prefers-color-scheme: dark)
+	body
+		background: hsl(180deg 20% 10%)
+
+html
+	margin: 0
+	font-family: Inter, system-ui
+
+body
+	padding: 1rem
+
+button
+	font-family: inherit
+
+[noFocusRing]:focus
+	outline: none
+
+@keyframes super 
+	from 
+		background: hsl(0deg 20% 50%)
+	20% 
+		background: hsl(72deg 20% 50%)
+	40%
+		background: hsl(144deg 20% 50%)
+	60% 
+		background: hsl(216deg 20% 50%)
+	80% 
+		background: hsl(288deg 20% 50%)
+	to 
+		background: hsl(360deg 20% 50%)

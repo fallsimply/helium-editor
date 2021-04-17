@@ -1,0 +1,26 @@
+details[dropdown] 
+	height: 2em
+	position: relative
+	list-style: none
+	appearance: none
+
+	& > summary::-webkit-details-marker, 
+	& > summary::marker
+		display: none
+		content: ""
+
+	&[open] > :nth-child(2) 
+		position: absolute
+		top: calc(100% + .5rem)
+		left: 50%
+		transform: translateX(-50%)
+		padding: 0.5em
+		display: grid
+		grid-auto-flow: column
+		grid-gap: 0.5em
+
+	& > summary > button::after 
+		content: " ▾"
+
+	&[open] > summary > button::after 
+		content: " ▴"

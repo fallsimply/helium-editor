@@ -1,0 +1,39 @@
+div[editor]
+	background: hsl(180, 20%, 70%)
+	padding: 1rem
+	border-radius: .25rem
+
+	div[toolbar]
+		button, details[dropdown] > :nth-child(2) 
+			background: hsl(180, 20%, 50%)
+			border-radius: 0.25em
+		button 
+			min-width: 2em
+			width: max-content
+			height: 2em
+			font-size: 1em
+			line-height: 1em
+			padding: 0.5em
+			border: 0
+			color: hsl(180, 10%, 100%)
+			box-sizing: border-box
+			font-feature-settings: "cv08"
+			&[admin] 
+				width: max-content
+				animation: super 2s infinite
+		button:focus, [dropdown]:focus-within > summary > button 
+			outline: none
+			border: 0.2em solid hsla(180, 0%, 0%, .8)
+			padding: 0.3em
+
+	div[contenteditable] 
+		padding: 1rem
+		margin-top: 0.5rem
+		border-radius: 0.25em
+		background: Hsl(180, 20%, 90%)
+		&:focus
+			padding: .8rem
+			border: .2rem solid hsla(180, 0%, 0%, .8)
+			outline: none
+		p 
+			margin: 0.25rem 0

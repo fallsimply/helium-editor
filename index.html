@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Vite App</title>
+		<link rel="stylesheet" href="./src/index.styl"/>
+	</head>
+	<body>
+		<div editor>
+			<div toolbar>
+				<button bold x-action="bold"><b>B</b></button>
+				<button italic x-action="italic"><i>I</i></button>
+				<button strike x-action="strike"><s>S</s></button>
+				<button underline x-action="underline"><u>U</u></button>
+				<details style="display: inline-block;" dropdown>
+					<summary noFocusRing tabindex="-1">
+						<button header caret tabindex="0">H</button>
+					</summary>
+					<div>
+						<button header x-action="h1">H1</button>
+						<button header x-action="h2">H2</button>
+						<button header x-action="h3">H3</button>
+					</div>
+				</details>
+				<button admin>Admin</button>
+			</div>
+			<div contenteditable>
+				<p>hello world <b>hElLo WoRlD</b> HELLO WORLD hello word HELLO WORLD HeLlO wOrLd</p>
+			</div>
+		</div>
+		<script type="module" src="./src/index.ts"></script>
+		<!-- <script type="module" src="./main.ts"></script> -->
+	</body>
+</html>
