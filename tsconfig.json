@@ -8,16 +8,17 @@
 		"resolveJsonModule": true,
 		"esModuleInterop": true,
 		"allowJs": true,
-
+		"paths": {
+			"@fallsimply/helium/*": ["lib/*"],
+		},
 		"lib": [
 			"esnext",
 			"dom"
 		],
+		"types": [
+			"vite/client",
+			"@types/node"
+		],
 		"baseUrl": "."
 	},
-	"include": [
-		"src/**/*.ts",
-		"src/**/*.d.ts",
-		"src/**/*.tsx",
-	]
 }

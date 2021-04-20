@@ -12,7 +12,16 @@ export default defineConfig({
 	resolve: {
 		alias: {
 			"~": relative`src`,
-			"@": relative`src/components`
+			"@fallsimply/helium": relative`lib`
 		}
-	}
+	},
+	build: {
+		lib: {
+			entry: relative`lib/index.ts`,
+			name: "helium",
+			// formats: ["es"]
+		},
+		minify: false,
+
+	},
 });

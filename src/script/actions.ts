@@ -1,5 +1,5 @@
 import { replaceBlock, replaceInline } from "./nodeUtils"
-import { $$ } from "./utils"
+import { $$ } from "@fallsimply/helium/utils"
 
 type PartialRecord<K extends string, V> = Partial<Record<K, V>> 
 

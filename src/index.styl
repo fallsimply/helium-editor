@@ -1,9 +1,10 @@
 @import "./dropdown/index.styl"
 @import "./editor.styl"
+@import "https://rsms.me/inter/inter.css"
 
 @media (prefers-color-scheme: dark)
 	body
-		background: hsl(180deg 20% 10%)
+		background: #0fc
 
 html
 	margin: 0
@@ -17,17 +18,3 @@ button
 
 [noFocusRing]:focus
 	outline: none
-
-@keyframes super 
-	from 
-		background: hsl(0deg 20% 50%)
-	20% 
-		background: hsl(72deg 20% 50%)
-	40%
-		background: hsl(144deg 20% 50%)
-	60% 
-		background: hsl(216deg 20% 50%)
-	80% 
-		background: hsl(288deg 20% 50%)
-	to 
-		background: hsl(360deg 20% 50%)

@@ -1,4 +1,4 @@
-import { $ } from "./utils"
+import { $ } from "@fallsimply/helium/utils"
 class FloatEventBus {
 	core: Comment
 	listeners: Record<string, (e: Event) => void>

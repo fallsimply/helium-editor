@@ -1,11 +1,11 @@
-div[editor]
-	background: hsl(180, 20%, 70%)
+div[helium][editor]
+	background:#0008
 	padding: 1rem
 	border-radius: .25rem
 
 	div[toolbar]
 		button, details[dropdown] > :nth-child(2) 
-			background: hsl(180, 20%, 50%)
+			background: #0cf
 			border-radius: 0.25em
 		button 
 			min-width: 2em
@@ -15,25 +15,25 @@ div[editor]
 			line-height: 1em
 			padding: 0.5em
 			border: 0
-			color: hsl(180, 10%, 100%)
+			color: #fff
 			box-sizing: border-box
 			font-feature-settings: "cv08"
 			&[admin] 
+				background: #c0f
 				width: max-content
-				animation: super 2s infinite
 		button:focus, [dropdown]:focus-within > summary > button 
 			outline: none
-			border: 0.2em solid hsla(180, 0%, 0%, .8)
+			border: 0.2em solid #000c
 			padding: 0.3em
 
 	div[contenteditable] 
 		padding: 1rem
 		margin-top: 0.5rem
 		border-radius: 0.25em
-		background: Hsl(180, 20%, 90%)
+		background: #fff
 		&:focus
 			padding: .8rem
-			border: .2rem solid hsla(180, 0%, 0%, .8)
+			border: .2rem solid #000c
 			outline: none
 		p 
 			margin: 0.25rem 0
