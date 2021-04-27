@@ -1,15 +1,16 @@
-import { replaceInline } from "./script/nodeUtils"
-import { registerInline, registerBlock, Inline, Block } from "./script/actions"
 import registerDropdown from "./dropdown"
 import { $ } from "@fallsimply/helium/utils"
-import Helium, { getSelect } from "@fallsimply/helium/index"
+import Helium from "@fallsimply/helium"
 
-$("[toolbar] button[admin]").addEventListener("click", () => {
-	let elem = prompt("Element Name", "s")
-	replaceInline(<any>elem)
-})
+// $("[toolbar] button[admin]").addEventListener("click", () => {
+// 	let elem = prompt("Element Name", "s")
+// 	replaceInline(<any>elem)
+// })
 
-registerInline(Inline)
-registerBlock(Block)
+declare global {
+	var editor: any
+}
+
+window.editor = new Helium()
 
 registerDropdown()

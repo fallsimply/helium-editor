@@ -1,6 +1,6 @@
-import type { KV } from "../utils/type"//"../utils/type"
+import type { KV } from "~/utils/type"
 
-type ElementMap = HTMLElementTagNameMap & SVGElementTagNameMap
+export type ElementMap = HTMLElementTagNameMap & SVGElementTagNameMap
 
 type List   = "ol" | "ul" | "li"
 type Header = `h${ 1 | 2 | 3 | 4 | 5 | 6 }`
@@ -15,7 +15,7 @@ export type Actions = Inline | Blocks | Media
 
 let arr: Array<Media> = ["audio", "video", "iframe", "image"]  
 
-interface ActionMap extends KV<Actions, keyof ElementMap> {}
+export interface ActionMap extends KV<Actions, keyof ElementMap> {}
 
 export let BaseActions: ActionMap = {
 	/* Format */
@@ -30,15 +30,23 @@ export let BaseActions: ActionMap = {
 	/* Text Blocks */
 	blockquote: "blockquote",
 	code: "code",
+	/* Media */
+	audio: "audio",
+	image: "img"
 }
 
-export let DefaultAttributes: KV<Actions, KV<string, string | boolean>> = {
+type ActionAttributeMap = {
+	[Action in Actions]?: {
+		[key: string]: string | boolean
+	}
+}
+
+export let DefaultAttributes: ActionAttributeMap = {
 	audio: {
-		showEditor: true,
-		controls: ""
+		controls: true
 	},
 	a: {
-		showEditor: true,
-		href: ""
+		href: "",
+
 	}
 }

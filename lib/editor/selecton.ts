@@ -5,20 +5,20 @@ interface DOMSelection extends Selection {
 	focusNode: Element,
 }
 
-interface CaretSelection {
-	type: "Caret",
+export interface CaretSelection {
+	type: "Caret"
 	node: Element,
 }
 
-interface RangeSelection {
+export interface RangeSelection {
 	type: "Range",
-	node: Element,
+	node: Element & Text,
 	endNode: Element,
 	begin: number,
 	end: number,
 }
 
-type Selected = CaretSelection | RangeSelection
+export type Selected = CaretSelection | RangeSelection
 
 export const getSelect = (): Selected => {
 	const {
@@ -42,8 +42,8 @@ export const getSelect = (): Selected => {
 		case "Range":
 			let begin = l < r ? l : r
 			let end   = l < r ? r : l
-			let node    = l < r ? lNode : rNode
-			let endNode = l < r ? rNode : lNode
+			let node    = (l < r ? lNode : rNode) as Element & Text
+			let endNode = (l < r ? rNode : lNode) as Element & Text
 
 			return { type, begin, end, node, endNode }
 	}

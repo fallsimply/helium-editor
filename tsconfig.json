@@ -10,6 +10,8 @@
 		"allowJs": true,
 		"paths": {
 			"@fallsimply/helium/*": ["lib/*"],
+			"@fallsimply/helium": ["lib/index.ts"],
+			"~/*": ["lib/*"]
 		},
 		"lib": [
 			"esnext",
@@ -21,4 +23,5 @@
 		],
 		"baseUrl": "."
 	},
+	"exclude": ["dist/*"]
 }
