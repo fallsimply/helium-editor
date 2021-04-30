@@ -11,7 +11,7 @@ export default defineConfig({
 	},
 	resolve: {
 		alias: {
-			"~": relative`src`,
+			"~": relative`lib`,
 			"@fallsimply/helium": relative`lib`
 		}
 	},

@@ -9,9 +9,9 @@
 		"esModuleInterop": true,
 		"allowJs": true,
 		"paths": {
-			"@fallsimply/helium/*": ["lib/*"],
+			"~/*": ["lib/*"],
 			"@fallsimply/helium": ["lib/index.ts"],
-			"~/*": ["lib/*"]
+			"@fallsimply/helium/*": ["lib/*"]
 		},
 		"lib": [
 			"esnext",
