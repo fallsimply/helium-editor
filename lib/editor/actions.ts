@@ -1,4 +1,4 @@
-import type { KV } from "~/utils/type"
+import type { KV } from "~/utils"
 
 export type ElementMap = HTMLElementTagNameMap & SVGElementTagNameMap
 

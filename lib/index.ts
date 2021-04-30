@@ -26,10 +26,10 @@ class Helium {
 
 	init() {
 		this.insert("image", {
-			src: "https://via.placeholder.com/400x400",
+			src: "https://picsum.photos/seed/helium-sample/400/400",
 			width: 200,
 		})
-		// this.insert("audio")
+		this.insert("audio", { controls: true })
 	}
 
 	insert(action: Actions, attrs: Record<string, string | number | boolean> = {}) {
