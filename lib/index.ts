@@ -1,7 +1,8 @@
-import { $, $$ } from "./utils"
+import { $ } from "./utils"
 import type { Selector } from "./utils/selectors"
-import BaseHandlers, { Handler } from "./editor/handlers"
+/* Editor */
 import { Actions, BaseActions, ActionMap, ElementMap } from "./editor/actions"
+import { Handler } from "./editor/core"
 
 class Helium {
 	editor: HTMLElement
@@ -9,7 +10,7 @@ class Helium {
 	actions: ActionMap
 	/* INTERNAL */
 	private elems: HTMLElement[] = []
-	private handlers: typeof BaseHandlers
+	private handlers: Record<string, Handler>
 
 	constructor(selector: Selector<any> = "[helium][editor]") {
 		this.editor  = $(selector)
@@ -17,9 +18,7 @@ class Helium {
 		this.actions = {
 			...BaseActions
 		}
-		this.handlers = {
-			...BaseHandlers
-		}
+		this.handlers = {}
 
 		this.init()
 	}
@@ -45,7 +44,7 @@ class Helium {
 			}
 		}
 
-		this.content.insertAdjacentElement("beforeend", elem)
+		this.content.append(elem)
 
 		this.elems.push(elem)
 
@@ -57,6 +56,10 @@ class Helium {
 		if (!!handler) {
 			this.handlers[action] = handler
 		}
+	}
+
+	registerActions(...actions: {action: Actions, element: keyof ElementMap, handler: Handler}[]) {
+		actions.forEach(act => this.registerAction(act.action, act.element, act.handler));
 	}
 }
 
