@@ -1,3 +1,13 @@
+import { NodeType } from "~/utils/elem"
+
+interface I_Element extends Element {
+	nodeType: NodeType.ELEMENT_NODE
+}
+interface I_Text extends Text {
+	nodeType: NodeType.TEXT_NODE
+}
+
+export type ElementOrText = I_Element | I_Text 
 
 interface DOMSelection extends Selection {
 	type: "None" | "Caret" | "Range",
@@ -12,9 +22,9 @@ export interface CaretSelection {
 
 export interface RangeSelection {
 	type: "Range",
-	node: Element & Text,
-	endNode: Element,
-	begin: number,
+	node: ElementOrText,
+	start: number,
+	endNode: ElementOrText,
 	end: number,
 }
 
@@ -42,9 +52,9 @@ export const getSelect = (): Selected => {
 		case "Range":
 			let begin = l < r ? l : r
 			let end   = l < r ? r : l
-			let node    = (l < r ? lNode : rNode) as Element & Text
-			let endNode = (l < r ? rNode : lNode) as Element & Text
+			let node    = (l < r ? lNode : rNode) as ElementOrText
+			let endNode = (l < r ? rNode : lNode) as ElementOrText
 
-			return { type, begin, end, node, endNode }
+			return { type, start: begin, end, node, endNode }
 	}
 }

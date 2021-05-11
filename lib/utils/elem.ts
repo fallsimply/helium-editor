@@ -1,5 +1,5 @@
 export const genElem = (type: string | TemplateStringsArray, ...args: string[]): Element => {
-	let tag
+	let tag: string
 
 	if (typeof type === "string")
 		tag = type
@@ -7,4 +7,16 @@ export const genElem = (type: string | TemplateStringsArray, ...args: string[]):
 		tag = type[0]
 
 	return document.createElement(tag)
+}
+
+export enum NodeType {
+	ELEMENT_NODE = 1,
+	ATTRIBUTE_NODE,
+	TEXT_NODE,
+	CDATA_SECTION_NODE,
+	PROCESSING_INSTRUCTION_NODE = 7,
+	COMMENT_NODE,
+	DOCUMENT_NODE,
+	DOCUMENT_TYPE_NODE,
+	DOCUMENT_FRAGMENT_NODE
 }

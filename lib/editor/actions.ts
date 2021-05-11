@@ -2,7 +2,7 @@ import type { KV } from "~/utils"
 
 export type ElementMap = HTMLElementTagNameMap & SVGElementTagNameMap
 
-type List   = "ol" | "ul" | "li"
+type List   = "numbered" | "bullet" | "li"
 type Header = `h${ 1 | 2 | 3 | 4 | 5 | 6 }`
 type Format = "bold" | "italic" | "strike" | "underline"
 
@@ -18,8 +18,8 @@ let arr: Array<Media> = ["audio", "video", "iframe", "image"]
 export interface ActionMap extends KV<Actions, keyof ElementMap> {}
 
 export let BaseActions: ActionMap = {
-	/* Format */
-	bold: "a",
+	/* Inline Formatting */
+	bold: "b",
 	italic: "i",
 	strike: "s",
 	underline: "u",
@@ -27,26 +27,20 @@ export let BaseActions: ActionMap = {
 	h1: "h1",
 	h2: "h2",
 	h3: "h3",
-	/* Text Blocks */
+	/* Formatted Blocks */
 	blockquote: "blockquote",
 	code: "code",
 	/* Media */
 	audio: "audio",
-	image: "img"
+	image: "img",
+	/* Lists */
+	numbered: "ol",
+	bullet: "ul",
+	li: "li",
 }
 
 type ActionAttributeMap = {
 	[Action in Actions]?: {
 		[key: string]: string | boolean
-	}
-}
-
-export let DefaultAttributes: ActionAttributeMap = {
-	audio: {
-		controls: true
-	},
-	a: {
-		href: "",
-
 	}
 }
