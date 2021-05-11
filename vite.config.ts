@@ -19,8 +19,9 @@ export default defineConfig({
 		lib: {
 			entry: relative`lib/index.ts`,
 			name: "helium",
-			// formats: ["es"]
+			formats: ["es"],
 		},
+		target: "es2020",
 		minify: false,
 
 	},
