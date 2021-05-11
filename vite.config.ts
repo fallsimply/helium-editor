@@ -3,10 +3,10 @@ import path from "path"
 
 const relative = (dir: TemplateStringsArray) => `${path.resolve(__dirname)}/${dir[0]}/`
 
-const production = (config: object) => process.env.NODE_ENV !== "development" ? config : {}
+const production = (config: object, mode: string) => mode !== "development" ? config : {}
 
 // DOCS: https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(env => ({
 	publicDir: "public",
 	resolve: {
 		alias: {
@@ -24,5 +24,5 @@ export default defineConfig({
 			target: "es2020",
 			minify: false,
 		}
-	})
-});
+	}, env.mode)
+}));
