@@ -8,7 +8,7 @@ type Format = "bold" | "italic" | "strike" | "underline"
 
 type Media  = "audio" | "video" | "image" | "iframe"
 
-type Inline =  List | Format | "subscript" | "superscript" | "a"
+type Inline =  List | Format | "subscript" | "superscript" | "link"
 type Blocks  = Header | "code" | "test" | "blockquote"
 
 export type Actions = Inline | Blocks | Media
@@ -23,6 +23,7 @@ export let BaseActions: ActionMap = {
 	italic: "i",
 	strike: "s",
 	underline: "u",
+	link: "a",
 	/* Headings */
 	h1: "h1",
 	h2: "h2",

@@ -43,7 +43,7 @@ export const makeInput = (node: Element, name: string, config: TextType | Select
 
 	let id = name.toLowerCase()
 
-	label.append(name)
+	label.append(`${name}: `)
 
 	switch (config.type) {
 		case "select":

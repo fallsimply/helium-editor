@@ -23,13 +23,7 @@ class Helium {
 		this.init()
 	}
 
-	init() {
-		this.insert("image", {
-			src: "https://picsum.photos/seed/helium-sample/400/400",
-			width: 200,
-		})
-		this.insert("audio", { controls: true })
-	}
+	init() {}
 
 	insert(action: Actions, attrs: Record<string, string | number | boolean> = {}) {
 		let elem = document.createElement(this.actions[action])
