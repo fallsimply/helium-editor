@@ -1,4 +1,4 @@
-import { NodeType } from "~/utils/elem"
+import { NodeType } from "../utils/elem"
 
 interface I_Element extends Element {
 	nodeType: NodeType.ELEMENT_NODE
@@ -43,12 +43,12 @@ export const getSelect = (): Selected => {
 
 	switch (type) {
 		case "None":
-			return;
+			return
 		case "Caret":
 			return {
 				type, 
 				node: lNode as Element
-			};
+			}
 		case "Range":
 			let begin = l < r ? l : r
 			let end   = l < r ? r : l

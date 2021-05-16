@@ -1,4 +1,4 @@
-import { ElementMap } from "../editor/core";
+import { ElementMap } from "../editor/core"
 
 type List   = "numbered" | "bullet" | "li"
 type Header = `h${ 1 | 2 | 3 | 4 | 5 | 6 }`

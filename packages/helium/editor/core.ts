@@ -1,4 +1,4 @@
-import { ElementOrText, RangeSelection } from "./selecton";
+import { ElementOrText, RangeSelection } from "./selecton"
 import { NodeType } from "../utils/elem"
 
 export type Handler = (node: Element) => void

@@ -15,7 +15,7 @@ export const genElem = (type: string | TemplateStringsArray, ...args: string[]):
 // 	if (elem.nodeType == NodeType.TEXT_NODE)
 // 		return
 
-// 	let next = elem.nextElementSibling;
+// 	let next = elem.nextElementSibling
 // 	while (next !== null) {
 // 		if (elem.tagName === next.tagName) {
 // 			elem.append(...Array.from(next.childNodes))
@@ -23,7 +23,7 @@ export const genElem = (type: string | TemplateStringsArray, ...args: string[]):
 // 			next = next.nextElementSibling
 // 			temp.remove()
 // 		} else
-// 			return;
+// 			return
 // 	}
 // }
 

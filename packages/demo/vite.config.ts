@@ -1,4 +1,5 @@
-import { defineConfig } from "vite";
+import { defineConfig } from "vite"
+import path from "node:path"
 
 // DOCS: https://vitejs.dev/config/
 export default defineConfig({
@@ -7,10 +8,4 @@ export default defineConfig({
 		target: "es2020",
 		minify: false,
 	},
-	resolve: {
-		alias: {
-			'@fallsimply/helium': '../helium/',
-		}
-	},
-	
-});
+})

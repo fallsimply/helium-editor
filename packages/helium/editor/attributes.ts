@@ -1,22 +1,22 @@
 export const makeEditor = (type: string, args?: Record<string, string | boolean | number>): Element => {
-	let editor = document.createElement("div");
+	let editor = document.createElement("div")
 
-	editor.toggleAttribute("attr");
-	editor.setAttribute("contenteditable", "false");
-	editor.setAttribute("tabindex", "0");
+	editor.toggleAttribute("attr")
+	editor.setAttribute("contenteditable", "false")
+	editor.setAttribute("tabindex", "0")
 
 	for (const key in args) {
-		editor.setAttribute(key, new String(args) as string);
+		editor.setAttribute(key, new String(args) as string)
 	}
 
-	editor.setAttribute("type", type.toLowerCase());;
+	editor.setAttribute("type", type.toLowerCase())
 
-	return editor;
-};
+	return editor
+}
 
 interface baseType {
-	type: string;
-	label?: string;
+	type: string
+	label?: string
 }
 
 interface SelectType extends baseType {
@@ -59,13 +59,13 @@ export const makeInput = (node: Element, name: string, config: TextType | Select
 			elem.type = "checkbox"
 			elem.addEventListener("change", () => node.toggleAttribute(id))
 			elem.checked = node.hasAttribute(id)
-			break;
+			break
 
 		default:
 			elem = document.createElement("input")
 			elem.type = config.type
 			elem.addEventListener("change", () => node.setAttribute(id, elem.value))
-			elem.value = node.getAttribute(id);
+			elem.value = node.getAttribute(id)
 	}
 
 	item.append(label, elem)
