@@ -1,9 +1,10 @@
 {
-	"name": "helium-editor-demo",
+	"name": "demo",
 	"version": "1.0.0",
 	"description": "demo of helium editor",
 	"author": "fallsimply",
 	"license": "MIT",
+	"private": true,
 	"scripts": {
 		"dev": "vite",
 		"build": "vite build",

@@ -13,18 +13,18 @@
 	<body>
 		<div helium editor>
 			<div toolbar>
-				<button bold x-action="bold"><b>B</b></button>
-				<button italic x-action="italic"><i>I</i></button>
-				<button strike x-action="strike"><s>S</s></button>
-				<button underline x-action="underline"><u>U</u></button>
-				<details style="display: inline-block;" dropdown>
-					<summary noFocusRing tabindex="-1">
-						<button header caret tabindex="0">H</button>
+				<button x-action="bold"><b>B</b></button>
+				<button x-action="italic"><i>I</i></button>
+				<button x-action="strike"><s>S</s></button>
+				<button x-action="underline"><u>U</u></button>
+				<details dropdown>
+					<summary noFocusRing>
+						<button caret>H</button>
 					</summary>
 					<div>
-						<button header x-action="h1">H1</button>
-						<button header x-action="h2">H2</button>
-						<button header x-action="h3">H3</button>
+						<button x-action="h1">H1</button>
+						<button x-action="h2">H2</button>
+						<button x-action="h3">H3</button>
 					</div>
 				</details>
 				<button admin>Admin</button>

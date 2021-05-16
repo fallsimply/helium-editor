@@ -1,21 +1,11 @@
 {
 	"name": "helium-editor-workspace",
 	"version": "0.0.0",
-	"main": "dist/helium-editor.es.js",
 	"private": true,
 	"scripts": {
-		"dev": "vite",
-		"build": "vite build",
-		"serve": "vite preview"
-	},
-	"devDependencies": {
-		"precss": "^4.0.0",
-		"stylus": "^0.54.8",
-		"vite": "^2.1.3"
-	},
-	"dependencies": {
-		"@types/node": "^14.14.41",
-		"typescript": "^4.2.4"
+		"demo:dev": "npm run dev --workspace=demo",
+		"demo:build": "npm run build --workspace=demo",
+		"core:build": "npm run build --workspace=@fallsimply/helium"
 	},
 	"workspaces": [
 		"packages/*"
