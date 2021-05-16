@@ -3,9 +3,9 @@
 	"version": "0.0.0",
 	"private": true,
 	"scripts": {
-		"demo:dev": "npm run dev --workspace=demo",
-		"demo:build": "npm run build --workspace=demo",
-		"core:build": "npm run build --workspace=@fallsimply/helium"
+		"demo:dev": "yarn workspace demo dev",
+		"demo:build": "yarn workspace demo build",
+		"core:build": "yarn workspace @fallsimply/helium build"
 	},
 	"workspaces": [
 		"packages/*"
