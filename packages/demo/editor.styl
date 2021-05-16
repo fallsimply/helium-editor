@@ -46,15 +46,11 @@ div[helium][editor]
 			width: 100%;
 			box-sizing: border-box
 
-			&:not([inline])
-				// grid-auto-flow: column;
-				grid-auto-columns: max-content;
-			&[inline]
-				// grid-auto-flow: column;
+			&[inline], &:not([inline])
 				grid-auto-columns: max-content;
 
 		audio
-			width: 97%
+			width: 100%
 
 div[attr]
 	input, select, button
@@ -68,3 +64,15 @@ div[attr]
 	
 	button
 		padding: .25rem .5rem;
+
+	input[type="checkbox"]
+		height: .875rem
+		width: .875rem
+		margin: .0625rem
+	
+	label
+		text-transform: capitalize
+		&:after
+			content: ":"	
+			display: inline-block
+			width: .5rem

@@ -1,0 +1,22 @@
+{
+	"name": "helium-editor-demo",
+	"version": "1.0.0",
+	"description": "demo of helium editor",
+	"author": "fallsimply",
+	"license": "MIT",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"serve": "vite preview"
+	},
+	"dependencies": {
+		"@fallsimply/helium": "^0.1.0",
+		"@types/node": "^14.14.41",
+		"typescript": "^4.2.4"
+	},
+	"devDependencies": {
+		"precss": "^4.0.0",
+		"stylus": "^0.54.8",
+		"vite": "^2.1.3"
+	}
+}

@@ -6,23 +6,16 @@ const relative = (dir: TemplateStringsArray) => `${path.resolve(__dirname)}/${di
 const production = (config: object, mode: string) => mode !== "development" ? config : {}
 
 // DOCS: https://vitejs.dev/config/
-export default defineConfig(env => ({
+export default defineConfig({
 	publicDir: "public",
+	build: {
+		target: "es2020",
+		minify: false,
+	},
 	resolve: {
 		alias: {
-			"~": relative`lib`,
-			"@fallsimply/helium": relative`lib`
+			'@fallsimply/helium': '../helium/',
 		}
-	},
-	...production({ 
-		build: {
-			lib: {
-				entry: relative`lib/index.ts`,
-				name: "helium",
-				formats: ["es"],
-			},
-			target: "es2020",
-			minify: false,
-		}
-	}, env.mode)
-}));
+	}
+	
+});

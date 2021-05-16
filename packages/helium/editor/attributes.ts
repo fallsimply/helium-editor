@@ -1,4 +1,4 @@
-export const makeEditor = (type: string | TemplateStringsArray, args?: Record<string, string | boolean | number>): Element => {
+export const makeEditor = (type: string, args?: Record<string, string | boolean | number>): Element => {
 	let editor = document.createElement("div");
 
 	editor.toggleAttribute("attr");
@@ -9,41 +9,39 @@ export const makeEditor = (type: string | TemplateStringsArray, args?: Record<st
 		editor.setAttribute(key, new String(args) as string);
 	}
 
-	if (typeof type === "string")
-		editor.setAttribute("type", type.toLowerCase());
-	if (Array.isArray(type) && type.length > 0)
-		editor.setAttribute("type", type[0].toLowerCase());
+	editor.setAttribute("type", type.toLowerCase());;
 
 	return editor;
 };
 
+interface baseType {
+	type: string;
+	label?: string;
+}
 
-type SelectType = {
+interface SelectType extends baseType {
 	type: "select",
 	items: Record<string, string | number | boolean>
 }
 
-type TextType = {
+interface TextType extends baseType {
 	type: "text" | "url" | "number" | "color"
 }
 
-type CheckType = {
+interface CheckType extends baseType {
 	type: "checkbox"
 }
 
 export type InputTypes = SelectType | TextType | CheckType
 
-/**
- * @param name - The Label for the Input (Lowercased for attribute)
- * */
 export const makeInput = (node: Element, name: string, config: TextType | SelectType | CheckType): HTMLElement => {
 	let item = document.createElement("div")
 	let label = document.createElement("label")
-	let elem: HTMLSelectElement | HTMLInputElement = document.createElement("input")
+	let elem: HTMLSelectElement | HTMLInputElement
 
 	let id = name.toLowerCase()
 
-	label.append(`${name}: `)
+	label.append(config.label ?? name)
 
 	switch (config.type) {
 		case "select":
@@ -57,12 +55,14 @@ export const makeInput = (node: Element, name: string, config: TextType | Select
 			break
 
 		case "checkbox":
+			elem = document.createElement("input")
 			elem.type = "checkbox"
 			elem.addEventListener("change", () => node.toggleAttribute(id))
 			elem.checked = node.hasAttribute(id)
 			break;
 
 		default:
+			elem = document.createElement("input")
 			elem.type = config.type
 			elem.addEventListener("change", () => node.setAttribute(id, elem.value))
 			elem.value = node.getAttribute(id);

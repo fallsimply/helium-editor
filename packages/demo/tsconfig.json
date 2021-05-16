@@ -16,10 +16,10 @@
 			"vite/client",
 			"@types/node"
 		],
-		"baseUrl": "./packages/"
+		"baseUrl": "./"
 	},
 	"include": [
-		"packages/**/*.ts",
-		"packages/**/*.d.ts"
+		"**/*.ts",
+		"**/*.d.ts"
 	]
 }

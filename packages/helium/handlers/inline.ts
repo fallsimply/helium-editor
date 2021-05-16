@@ -30,12 +30,11 @@ export default (attrs: Record<string, InputTypes>, name?: string): Handler => (n
 	node.setAttribute("tabindex", "0");
 	node.addEventListener("DOMNodeRemoved", editor.remove);
 
-	for (const name in attrs) {
+	for (const name in attrs)
 		makeInput(node, name, attrs[name])
-	}
 
 	let remove = document.createElement("button");
-	remove.innerText = `× Remove ${HumanCase(name ?? node.tagName)}`;
+	remove.innerText = `× Remove ${name ?? node.tagName}`;
 	remove.addEventListener("click", () => {
 		editor.remove();
 		node.remove();
@@ -45,5 +44,4 @@ export default (attrs: Record<string, InputTypes>, name?: string): Handler => (n
 
 	node.parentElement.append("beforeend", editor);
 	editor.after(document.createElement("p"));
-
 };

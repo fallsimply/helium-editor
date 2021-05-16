@@ -1,8 +1,8 @@
 import { $ } from "./utils"
 import type { Selector } from "./utils/selectors"
 /* Editor */
-import { Actions, BaseActions, ActionMap, ElementMap } from "./editor/actions"
-import { Handler } from "./editor/core"
+import { Actions, ActionMap } from "./actions"
+import { Handler, ElementMap } from "./editor/core"
 
 class Helium {
 	editor: HTMLElement
@@ -15,9 +15,7 @@ class Helium {
 	constructor(selector: Selector<any> = "[helium][editor]") {
 		this.editor  = $(selector)
 		this.content = $("[contenteditable]", this.editor)
-		this.actions = {
-			...BaseActions
-		}
+		this.actions = {}
 		this.handlers = {}
 
 		this.init()
